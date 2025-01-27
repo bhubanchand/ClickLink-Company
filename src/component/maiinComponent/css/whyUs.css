@@ -1,0 +1,249 @@
+.whyUs-Container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.why-clicklink {
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+/* Images styling */
+.images img {
+    position: absolute;
+    width: 14%; /* Adjust width relative to the viewport width */
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 9;
+    border: 2px solid white;
+    mix-blend-mode: darken;
+}
+
+/* Positioning images around the text */
+.img1 {
+    top: 20%;
+    left: 5%;
+    transform: rotate(-10deg);
+}
+
+.img2 {
+    top: 15%;
+    right: 25%;
+    transform: rotate(8deg);
+}
+
+.img3 {
+    top: 5%;
+    left: 20%;
+    transform: rotate(-5deg);
+}
+
+.img4 {
+    bottom: 20%;
+    left: 8%;
+    transform: rotate(12deg);
+}
+
+.img5 {
+    bottom: 17%;
+    right: 12%;
+    transform: rotate(-12deg);
+}
+
+.img6 {
+    top: 11%;
+    right: 9%;
+    transform: rotate(5deg);
+}
+
+.img7 {
+    bottom: 8%;
+    left: 41%;
+    transform: rotate(-14deg);
+}
+
+.img8 {
+    top: 6%;
+    left: 40%;
+    transform: rotate(20deg);
+}
+
+.img9 {
+    bottom: 12%;
+    right: 28%;
+    transform: rotate(-15deg);
+}
+
+.img10 {
+    bottom: 6%;
+    left: 23%;
+    transform: rotate(7deg);
+}
+
+/* Hover effect for interactivity */
+.images img:hover {
+    transform: scale(1.1) rotate(0deg);
+    opacity: 0.9;
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .whyUs-Container {
+    padding: 0 0px;
+  }
+
+  .why-clicklink {
+    font-size: 3.4rem; /* Decrease text size */
+    position: relative;
+   }
+
+  .images img {
+    width: 30%; /* Reduce image size for better fit on smaller screens */
+  }
+
+  .img1 {
+    top: 32%;
+    left: 3%;
+    transform: rotate(-5deg);
+  }
+
+  .img2 {
+    top: 22%;
+    right: 15%;
+    transform: rotate(5deg);
+  }
+
+  .img3 {
+    top: 17%;
+    left: 16%;
+    transform: rotate(-5deg);
+  }
+
+  .img4 {
+    bottom: 30%;
+    left: 3%;
+    transform: rotate(10deg);
+  }
+
+  .img5 {
+    bottom: 22%;
+    right: 13%;
+    transform: rotate(-10deg);
+  }
+
+  .img6 {
+    top: 31%;
+    right: 8%;
+    transform: rotate(5deg);
+  }
+
+  .img7 {
+    bottom: 32%;
+    left: 30%;
+    transform: rotate(-12deg);
+  }
+
+  .img8 {
+    top: 31%;
+    left: 30%;
+    transform: rotate(15deg);
+  }
+
+  .img9 {
+    bottom: 32%;
+    right: 11%;
+    transform: rotate(-12deg);
+  }
+
+  .img10 {
+    bottom: 18%;
+    left: 18%;
+    transform: rotate(5deg);
+  }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .whyUs-Container {
+    padding: 0 20px;
+  }
+
+  .why-clicklink {
+    font-size: 6rem; /* Slightly reduce text size for tablet */
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .images img {
+    width: 20%; /* Slightly larger image size than mobile */
+  }
+
+  .img1 {
+    top: 18%;
+    left: 8%;
+    transform: rotate(-8deg);
+  }
+
+  .img2 {
+    top: 13%;
+    right: 18%;
+    transform: rotate(6deg);
+  }
+
+  .img3 {
+    top: 7%;
+    left: 23%;
+    transform: rotate(-6deg);
+  }
+
+  .img4 {
+    bottom: 15%;
+    left: 6%;
+    transform: rotate(9deg);
+  }
+
+  .img5 {
+    bottom: 12%;
+    right: 10%;
+    transform: rotate(-9deg);
+  }
+
+  .img6 {
+    top: 10%;
+    right: 10%;
+    transform: rotate(4deg);
+  }
+
+  .img7 {
+    bottom: 8%;
+    left: 32%;
+    transform: rotate(-13deg);
+  }
+
+  .img8 {
+    top: 5%;
+    left: 38%;
+    transform: rotate(18deg);
+  }
+
+  .img9 {
+    bottom: 8%;
+    right: 18%;
+    transform: rotate(-10deg);
+  }
+
+  .img10 {
+    bottom: 4%;
+    left: 15%;
+    transform: rotate(6deg);
+  }
+}

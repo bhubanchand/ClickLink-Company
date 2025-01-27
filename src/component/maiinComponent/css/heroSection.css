@@ -1,0 +1,146 @@
+.hero-section {
+  background: linear-gradient(to right, #f0e7db, #e6d3b5, #c1b7a4);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 0 20px;
+  text-align: center;
+
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-heading {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: black;
+}
+.hero-heading .letter {
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.hero-small-text {
+  font-size: 1rem;
+  color: #777;
+}
+
+.hero-bottom-lineword {
+  position: absolute;
+  height: 6vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007bff; 
+  color: #fff;
+  overflow: hidden; 
+  white-space: nowrap; 
+  display: flex; 
+  align-items: center; 
+}
+
+.heroBottomContent {
+  display: inline-block;
+  white-space: nowrap; 
+  animation: seamless-scroll 10s linear infinite;
+}
+
+.heroContent-scroll-item {
+  margin: 0 20px; 
+  font-size: 1.2rem; 
+}
+
+@keyframes seamless-scroll {
+  0% {
+    transform: translateX(0); 
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+.content:nth-child(2) {
+  animation-delay: -5ms; 
+}
+
+/* Mobile view */
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+
+  .hero-heading {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-small-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-bottom-lineword {
+    height: 5vh;
+  }
+
+  .heroContent-scroll-item {
+    font-size: 1rem;
+    margin: 0 15px;
+  }
+
+  .heroBottomContent {
+    animation: seamless-scroll 15s linear infinite;
+  }
+}
+
+/* Tablet view */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-section {
+    padding: 0 20px;
+    font-size: 1.1rem;
+  }
+
+  .hero-heading {
+    font-size: 5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-small-text {
+    font-size: 1rem;
+  }
+
+  .hero-bottom-lineword {
+    height: 6vh;
+  }
+
+  .heroContent-scroll-item {
+    font-size: 1.1rem;
+    margin: 0 18px;
+  }
+
+  .heroBottomContent {
+    animation: seamless-scroll 12s linear infinite;
+  }
+}

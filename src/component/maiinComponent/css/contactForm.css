@@ -1,0 +1,116 @@
+.contactus-BoxContainer{
+  height: 60vh;
+  width: 100%;
+  background-image: url('https://thewebmax.org/indusza/images/background/map-bg-dark2.png');
+  background-size: cover;
+  background-position: center;
+}
+.contactUsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.contactUsContent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.contactUsTitle{
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+}
+.contactUsTitle p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contactOptionOuterContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.contactOptionWrapper {
+  display: flex;
+  white-space: nowrap; /* Ensure options stay in a single line */
+  will-change: transform;
+  justify-content: center; /* Center the items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.contactOption {
+  font-size: 50px;
+  margin-right: 50px;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent the text from wrapping */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contactOption:hover {
+  transform: scale(1.1);
+  color: #f39c12;
+}
+.contactUsContent-text{
+  max-width: 100%;
+  margin-top: 60px;
+}
+.brand-selectedText {
+  font-size: 200px;
+  font-weight: bold;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+/* Mobile View (up to 480px) */
+@media (max-width: 480px) {
+  .brand-selectedText {
+    font-size: 80px;
+    transform: rotate(-90deg); /* Vertical text */
+    margin-top: 18px;
+  }
+
+  .contactOptionWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; /* Ensure it stays horizontal */
+    width: auto; /* Ensure it doesn't wrap */
+  }
+
+  .contactOption {
+    font-size: 30px; /* Smaller font size for mobile */
+    margin-right: 15px; /* Reduced spacing for mobile */
+  }
+}
+
+/* Tablet View (up to 768px) */
+@media (max-width: 768px) {
+  .contactUsContent-text{
+    max-width: 100%;
+    margin-top: 160px;
+  }
+  .brand-selectedText {
+    font-size: 70px;
+    font-weight: bold;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  
+  }
+
+  .contactOptionWrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
