@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.244a4aad.css",
+    "main.js": "/static/js/main.3661fd82.js",
+    "static/js/488.c6bdc9cb.chunk.js": "/static/js/488.c6bdc9cb.chunk.js",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (1).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (1).b71a4c08c7afa8cb1180.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (2).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (2).0634ad11857f3f1fa80d.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM.jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM.fcb06c5645831a944c48.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM (1).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM (1).8e835a79a47748b7c0a7.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.41 PM.jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.41 PM.d6d59fc29987768ae30e.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.41 PM (1).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.41 PM (1).b97a437d27f1108e4a34.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM (2).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM (2).dc19bc3f5efc748adcad.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM (1).jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM (1).bc470e733ec1a6300b12.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM.jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM.497b0cbc767afcb02553.jpeg",
+    "static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM.jpeg": "/static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM.01f0801f4dc194b2a796.jpeg",
+    "index.html": "/index.html",
+    "main.244a4aad.css.map": "/static/css/main.244a4aad.css.map",
+    "main.3661fd82.js.map": "/static/js/main.3661fd82.js.map",
+    "488.c6bdc9cb.chunk.js.map": "/static/js/488.c6bdc9cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.244a4aad.css",
+    "static/js/main.3661fd82.js"
+  ]
+}

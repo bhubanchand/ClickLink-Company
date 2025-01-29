@@ -39,14 +39,14 @@
 
 .contactOptionWrapper {
   display: flex;
-  white-space: nowrap; /* Ensure options stay in a single line */
+  white-space: nowrap; 
   will-change: transform;
-  justify-content: center; /* Center the items */
-  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: center; 
+  flex-wrap: nowrap; 
 }
 
 .contactOption {
-  font-size: 50px;
+  font-size: clamp(1rem, 4vw, 2.5rem);
   margin-right: 50px;
   cursor: pointer;
   white-space: nowrap; /* Prevent the text from wrapping */
@@ -69,6 +69,23 @@
   text-overflow: ellipsis;
   text-align: center;
 }
+.contactOption a {
+  text-decoration: none; 
+  color: inherit; 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contactOption a:hover {
+  color: #f39c12; 
+  transform: scale(1.1); 
+}
+
+.contactOption a:focus {
+  outline: none;
+  border-bottom: 2px solid #f39c12; 
+}
+
+
 
 /* Mobile View (up to 480px) */
 @media (max-width: 480px) {

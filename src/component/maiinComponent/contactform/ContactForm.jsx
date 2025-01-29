@@ -1,72 +1,66 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "../css/contactForm.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(MotionPathPlugin);
 const ContactForm = () => {
   const Data = [
-    { title: "Instagram", link: "https://instagram.com" },
-    { title: "WhatsApp", link: "https://wa.me/1234567890" },
-    { title: "LinkedIn", link: "https://linkedin.com" },
-    { title: "Twitter", link: "https://twitter.com" },
-    { title: "Facebook", link: "mailto:example@example.com" },
+    {
+      title: "Instagram",
+      link: "https://www.youtube.com",
+    },
+    {
+      title: "WhatsApp",
+      link: "https://react.dev/blog/2024/12/05/react-19#whats-new-in-react-19",
+    },
+    { title: "LinkedIn", link: "https://react.dev" },
+    { title: "Twitter", link: "https://react.dev/blog" },
+    { title: "Email", link: "mailto:example@example.com" },
   ];
-
   const wrapperRef = useRef(null);
-  const animationRef = useRef(null);
-
   useEffect(() => {
     const wrapper = wrapperRef.current;
-    const options = wrapper.querySelectorAll(".contactOption");
 
-    if (options.length > 0) {
-      // Calculate total width based on all options
-      const totalWidth = Array.from(options).reduce(
-        (acc, el) => acc + el.offsetWidth,
+    if (wrapper) {
+      const options = Array.from(wrapper.children);
+      const totalWidth = options.reduce(
+        (acc, el) => acc + el.offsetWidth + 50,
         0
-      );
+      ); // Include gap
 
-      // Duplicate only the contact options for seamless looping
-      wrapper.innerHTML += wrapper.innerHTML;
+      // Duplicate elements for seamless animation
+      options.forEach((el) => {
+        const clone = el.cloneNode(true);
+        wrapper.appendChild(clone);
+      });
 
-      // Set the wrapper width to twice the total width
       wrapper.style.width = `${totalWidth * 2}px`;
 
-      // GSAP animation with smoother looping
-      const animationSpeed = window.innerWidth <= 768 ? 25 : 15; // slower on mobile
-      animationRef.current = gsap.to(wrapper, {
+      // GSAP animation using modifiers for smooth looping
+      gsap.registerPlugin(MotionPathPlugin);
+      const speedFactor = 150; // Increase this value to speed up animation
+      const animation = gsap.to(wrapper, {
         x: -totalWidth,
-        duration: animationSpeed,
+        duration: totalWidth / speedFactor, // Adjust speed dynamically
         ease: "none",
         repeat: -1,
         modifiers: {
-          x: (x) => `${parseFloat(x) % -totalWidth}px`, // Ensure seamless loop
+          x: (x) => `${parseFloat(x) % -totalWidth}px`, // Seamless loop
         },
       });
-    }
 
-    return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
-      }
-    };
+      return () => {
+        animation.kill();
+      };
+    }
   }, []);
 
   const handleMouseEnter = () => {
-    if (animationRef.current) {
-      animationRef.current.pause(); // Pause animation on mouse enter
-    }
+    gsap.globalTimeline.pause();
   };
-
   const handleMouseLeave = () => {
-    if (animationRef.current) {
-      animationRef.current.resume(); // Resume animation on mouse leave
-    }
-  };
-
-  const handleOptionClick = (link) => {
-    window.open(link, "_blank");
+    gsap.globalTimeline.resume();
   };
 
   return (
@@ -86,9 +80,13 @@ const ContactForm = () => {
                 <span
                   key={index}
                   className="contactOption"
-                  onClick={() => handleOptionClick(item.link)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Visit ${item.title}`}
                 >
+                 <a href={item.link} target="_blank" rel="noopener noreferrer">
                   {item.title}
+                  </a>
                 </span>
               ))}
             </div>
