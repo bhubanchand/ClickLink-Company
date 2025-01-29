@@ -80,10 +80,7 @@
   transform: scale(1.1); 
 }
 
-.contactOption a:focus {
-  outline: none;
-  border-bottom: 2px solid #f39c12; 
-}
+
 
 
 

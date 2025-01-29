@@ -16,7 +16,7 @@ const ContactForm = () => {
     },
     { title: "LinkedIn", link: "https://react.dev" },
     { title: "Twitter", link: "https://react.dev/blog" },
-    { title: "Email", link: "mailto:example@example.com" },
+    { title: "Email", link: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@example.com&su=Contact%20Us" },
   ];
   const wrapperRef = useRef(null);
   useEffect(() => {
