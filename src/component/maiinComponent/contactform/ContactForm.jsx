@@ -21,40 +21,40 @@ const ContactForm = () => {
   const wrapperRef = useRef(null);
   useEffect(() => {
     const wrapper = wrapperRef.current;
-
     if (wrapper) {
       const options = Array.from(wrapper.children);
+      
+  
       const totalWidth = options.reduce(
-        (acc, el) => acc + el.offsetWidth + 50,
+        (acc, el) => acc + el.offsetWidth + parseFloat(getComputedStyle(el).marginRight),
         0
-      ); // Include gap
-
+      ); // Include margin (or gap)
+  
       // Duplicate elements for seamless animation
       options.forEach((el) => {
         const clone = el.cloneNode(true);
         wrapper.appendChild(clone);
       });
-
-      wrapper.style.width = `${totalWidth * 2}px`;
-
-      // GSAP animation using modifiers for smooth looping
-      gsap.registerPlugin(MotionPathPlugin);
-      const speedFactor = 150; // Increase this value to speed up animation
+  
+      wrapper.style.width = `${totalWidth * 2}px`; // Ensure no gap after duplication
+  
+      const speedFactor = 150;
       const animation = gsap.to(wrapper, {
         x: -totalWidth,
-        duration: totalWidth / speedFactor, // Adjust speed dynamically
+        duration: totalWidth / speedFactor,
         ease: "none",
         repeat: -1,
         modifiers: {
           x: (x) => `${parseFloat(x) % -totalWidth}px`, // Seamless loop
         },
       });
-
+  
       return () => {
         animation.kill();
       };
     }
   }, []);
+  
 
   const handleMouseEnter = () => {
     gsap.globalTimeline.pause();
