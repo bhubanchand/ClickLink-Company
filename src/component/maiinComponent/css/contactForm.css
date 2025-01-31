@@ -27,14 +27,14 @@
   padding: 20px;
 }
 .contactUsTitle p {
-  font-size: 24px;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: bold;
+  color: #080808;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contactOptionOuterContainer {
-  position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
 .contactOptionWrapper {
@@ -43,6 +43,7 @@
   will-change: transform;
   justify-content: center; 
   flex-wrap: nowrap; 
+  width: auto;
 }
 
 .contactOption {
@@ -62,11 +63,13 @@
   margin-top: 60px;
 }
 .brand-selectedText {
-  font-size: 200px;
-  font-weight: bold;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: calc(1em + 30vmin);
+  font-weight: 900;
+  color: #5c5c5c; /* Soft Gray */
+  
+  text-shadow: 
+    -0.0625em 0.0625em 0px #eaeaea, /* Very Light Gray */
+    -0.0875em 0.0875em 0px #b3cde0;
   text-align: center;
 }
 .contactOption a {
@@ -94,14 +97,14 @@
 
   .contactOptionWrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap; /* Ensure it stays horizontal */
-    width: auto; /* Ensure it doesn't wrap */
+    align-items: center; /* Fixes slight misalignment */
+    gap: 10px; /* Ensure it stays horizontal */
+    overflow: hidden;
   }
 
   .contactOption {
-    font-size: 30px; /* Smaller font size for mobile */
-    margin-right: 15px; /* Reduced spacing for mobile */
+    font-size: 20px; /* Smaller font size */
+    margin-right: 8px; /* Reduce extra spacing */
   }
 }
 
@@ -112,12 +115,10 @@
     margin-top: 160px;
   }
   .brand-selectedText {
-    font-size: 70px;
-    font-weight: bold;
+    font-weight: 900;
     transform: rotate(-90deg);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
   
   }
@@ -126,5 +127,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 10px;
   }
+  .contactOption {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+    margin-right: 5px; /* Adjust margin for tablet */
+  }
+ 
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import  gsap  from "gsap";
 import "../css/contactForm.css";
 import { MotionPathPlugin } from "gsap/all";
@@ -19,43 +19,64 @@ const ContactForm = () => {
     { title: "Email", link: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@example.com&su=Contact%20Us" },
   ];
   const wrapperRef = useRef(null);
-  useEffect(() => {
+  const [totalWidth, setTotalWidth] = useState(0);
+  useLayoutEffect(() => {
     const wrapper = wrapperRef.current;
-    if (wrapper) {
-      const options = Array.from(wrapper.children);
-      
-  
-      const totalWidth = options.reduce(
-        (acc, el) => acc + el.offsetWidth + parseFloat(getComputedStyle(el).marginRight),
-        0
-      ); // Include margin (or gap)
-  
-      // Duplicate elements for seamless animation
+    const options = Array.from(wrapper.children);
+    const calculateWidth = () => {
+      console.log("Calculating width...");
+      const totalWidth = options.reduce((acc, el) => {
+        const rect = el.getBoundingClientRect();
+        return acc + rect.width + 50; // Add margin or gap
+      }, 0);
+      const roundedTotalWidth = Math.round(totalWidth * 100) / 100;
+      console.log("Calculated Total Width (rounded):", roundedTotalWidth);
+      setTotalWidth(roundedTotalWidth);
+      // Duplicate the elements for seamless animation
       options.forEach((el) => {
         const clone = el.cloneNode(true);
         wrapper.appendChild(clone);
       });
-  
-      wrapper.style.width = `${totalWidth * 2}px`; // Ensure no gap after duplication
-  
-      const speedFactor = 150;
-      const animation = gsap.to(wrapper, {
-        x: -totalWidth,
-        duration: totalWidth / speedFactor,
-        ease: "none",
+      wrapper.style.width = `${roundedTotalWidth * 2}px`;
+      // GSAP animation with minor tweaks for smoother transition
+    
+      const isMobile = window.innerWidth <= 768;
+      const offset = isMobile ? 7 : 5;
+      console.log("offset",offset);
+      const speedFactor =  250;
+      gsap.set(wrapper, { x: 0 });
+      gsap.to(wrapper, {
+        x: `-=${roundedTotalWidth + offset}`,
+        duration: roundedTotalWidth / speedFactor,
+        ease: "none", 
         repeat: -1,
+        repeatDelay: 0,
         modifiers: {
-          x: (x) => `${parseFloat(x) % -totalWidth}px`, // Seamless loop
+          x: (x) => {
+            // Smoother transition by removing the modulo calculation jerk
+            const modX = parseFloat(x);
+            return `${modX % roundedTotalWidth}px`;
+          },
         },
+        force3D: true,
+        clearProps: 'all',
+        immediateRender: false, // Ensure the initial state isn't visually jarring
       });
-  
-      return () => {
-        animation.kill();
-      };
-    }
+    };
+    // Delay the width calculation slightly to allow the DOM to fully render
+    const resizeHandler = () => {
+      requestAnimationFrame(calculateWidth);
+    };
+    const resizeObserver = new ResizeObserver(resizeHandler);
+    // Initial calculation with delay
+    setTimeout(() => {
+      calculateWidth();
+    }, 100);
+    resizeObserver.observe(wrapper);
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
-  
-
   const handleMouseEnter = () => {
     gsap.globalTimeline.pause();
   };
@@ -63,6 +84,9 @@ const ContactForm = () => {
     gsap.globalTimeline.resume();
   };
 
+  
+  console.log("hello");
+  
   return (
     <div className="contactus-BoxContainer">
       <div className="contactUsTitle">
@@ -94,7 +118,7 @@ const ContactForm = () => {
         </div>
       </div>
       <div className="contactUsContent-text">
-        <h1 className="brand-selectedText">ClickLink.</h1>
+        <h1 className="brand-selectedText">Create1</h1>
       </div>
     </div>
   );
