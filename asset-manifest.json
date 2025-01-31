@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ClickLink-Company/static/css/main.fc04181d.css",
-    "main.js": "/ClickLink-Company/static/js/main.7d5bc0bf.js",
+    "main.css": "/ClickLink-Company/static/css/main.e24b0a1d.css",
+    "main.js": "/ClickLink-Company/static/js/main.0f67b777.js",
     "static/js/488.c6bdc9cb.chunk.js": "/ClickLink-Company/static/js/488.c6bdc9cb.chunk.js",
     "static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (1).jpeg": "/ClickLink-Company/static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (1).b71a4c08c7afa8cb1180.jpeg",
     "static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (2).jpeg": "/ClickLink-Company/static/media/WhatsApp Image 2025-01-05 at 4.39.42 PM (2).0634ad11857f3f1fa80d.jpeg",
@@ -14,12 +14,12 @@
     "static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM.jpeg": "/ClickLink-Company/static/media/WhatsApp Image 2025-01-05 at 4.39.39 PM.497b0cbc767afcb02553.jpeg",
     "static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM.jpeg": "/ClickLink-Company/static/media/WhatsApp Image 2025-01-05 at 4.39.40 PM.01f0801f4dc194b2a796.jpeg",
     "index.html": "/ClickLink-Company/index.html",
-    "main.fc04181d.css.map": "/ClickLink-Company/static/css/main.fc04181d.css.map",
-    "main.7d5bc0bf.js.map": "/ClickLink-Company/static/js/main.7d5bc0bf.js.map",
+    "main.e24b0a1d.css.map": "/ClickLink-Company/static/css/main.e24b0a1d.css.map",
+    "main.0f67b777.js.map": "/ClickLink-Company/static/js/main.0f67b777.js.map",
     "488.c6bdc9cb.chunk.js.map": "/ClickLink-Company/static/js/488.c6bdc9cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc04181d.css",
-    "static/js/main.7d5bc0bf.js"
+    "static/css/main.e24b0a1d.css",
+    "static/js/main.0f67b777.js"
   ]
 }
